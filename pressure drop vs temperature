@@ -1,0 +1,22 @@
+% Pressure Drop vs Temperature
+
+% Reuse viscosity from previous plot
+mu0 = 0.2;
+k = 0.03;
+T = 30:10:100;
+mu_T = mu0 * exp(-k * (T - 30));
+
+% Parameters
+K = 50;             % Pressure drop constant
+Q_flow = 0.5;       % Flow rate (L/min)
+
+% Pressure drop calculation
+delta_P = K * mu_T * Q_flow;
+
+% Plot
+figure;
+plot(T, delta_P, 'ms-', 'LineWidth', 2);
+title('Pressure Drop vs Temperature');
+xlabel('Temperature (°C)');
+ylabel('Pressure Drop (Pa)');
+grid on;
