@@ -1,0 +1,22 @@
+% Frictional Heat vs Time
+
+% Parameters
+mu_dry = 0.4;
+mu_lub = 0.1;
+N = 200;           % Normal load in Newtons
+v = 0.5;           % Sliding velocity in m/s
+t = 0:1:60;        % Time in seconds
+
+% Heat generation
+Q_dry = mu_dry * N * v * t;
+Q_lub = mu_lub * N * v * t;
+
+% Plot
+figure;
+plot(t, Q_dry, 'r', 'LineWidth', 2); hold on;
+plot(t, Q_lub, 'b', 'LineWidth', 2);
+title('Frictional Heat vs Time');
+xlabel('Time (s)');
+ylabel('Frictional Heat (Joules)');
+legend('Dry Contact', 'Lubricated Contact');
+grid on;
