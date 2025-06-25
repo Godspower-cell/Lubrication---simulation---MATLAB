@@ -1,0 +1,17 @@
+% Viscosity vs Temperature
+
+% Parameters
+T = 30:10:100;       % Temperature in °C
+mu0 = 0.2;           % Initial viscosity at 30°C (Pa.s)
+k = 0.03;            % Decay constant
+
+% Viscosity calculation
+mu_T = mu0 * exp(-k * (T - 30));
+
+% Plot
+figure;
+plot(T, mu_T, 'go-', 'LineWidth', 2);
+title('Viscosity vs Temperature');
+xlabel('Temperature (°C)');
+ylabel('Viscosity (Pa·s)');
+grid on;
